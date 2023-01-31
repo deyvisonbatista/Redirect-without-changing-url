@@ -1,12 +1,54 @@
-<html>
+<html lang="pt-BR">
 <head>
-<title>Title</title>
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <style>
+    html body {
+      width: 100%;
+      height: 100%;
+      padding: 0px;
+      margin: 0px;
+      overflow: hidden;
+      font-family: arial;
+      font-size: 10px;
+      color: #6e6e6e;
+      background-color: #000;
+    }
+    
+    #preview-frame {
+      width: 100%;
+      background-color: #fff;
+    }
+  </style>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script>
+    var calcHeight = function() {
+      $('#preview-frame').height($(window).height());
+    }
+
+    $(document).ready(function() {
+      calcHeight();
+    });
+
+    $(window).resize(function() {
+      calcHeight();
+    }).load(function() {
+      calcHeight();
+    });
+  </script>
+
+    <title>Title</title>
+
 </head>
 <frameset rows="0,*" border="0">
+
 <frame name="header" scrolling="no" noresize target="main">
-<frame name="main" src="http://www.domain.com">
+<frame name="main" id="preview-frame" src="https://domain.com">
+
 <noframes>
 <body></body>
 </noframes>
 </frameset>
 </html>
+
